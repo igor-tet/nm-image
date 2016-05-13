@@ -89,13 +89,10 @@ var methods = {
 							, _h = image.height() / crop_k_h
 
 						var _min_wh = Math.min(_w, _h)
-
 						var _w_new = Math.round(_min_wh * crop_k_w)
 						var _h_new = Math.round(_min_wh * crop_k_h)
 
-
-						var wh = get_mw_mh(_w_new, _h_new, params)
-						image.crop(wh.new_w, wh.new_h, _cb_handler(cb))
+						image.crop(_w_new, _h_new, _cb_handler(cb))
 					} else {
 						cb()
 					}

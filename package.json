@@ -1,6 +1,6 @@
 {
   "name": "nm-image",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "Scrap any pages easy",
   "main": "index.js",
   "scripts": {
