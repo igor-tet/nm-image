@@ -11,7 +11,7 @@ app.post('/api/upload', function (req, res) {
 	var params = req.body
 
 	image_lib.save({
-		dir: '/uploads/1/' + params.dir_name,
+		dir: __dirname + '/uploads/1/' + params.dir_name,
 		name: 'test',
 		base64: params.base64,
 		max_width: 225,
@@ -24,7 +24,7 @@ app.post('/api/upload', function (req, res) {
 
 	//or with callbacks
     image_lib.save({
-        dir: '/uploads/1/' + params.dir_name,
+        dir: __dirname + '/uploads/1/' + params.dir_name,
         name: 'test',
         base64: params.base64,
         max_width: 225,
