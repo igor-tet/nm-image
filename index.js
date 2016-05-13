@@ -26,18 +26,19 @@ var methods = {
 	save: function (params, ecb, scb) {
 		var buffer = params.buffer || this.decodeBase64(params.base64)
 		var name = params.name,
-			dir = params.dir + '/'
+			dir = params.dir + '/',
+			path = params.path + '/'
 		dir = dir.replace(/\/\//gi, '')
-		
-		var abs_dir = __dirname + dir,
+		path = path.replace(/\/\//gi, '')
+
+		var abs_dir = dir + path,
 			crop = params.crop,
 			ext = this.get_extention(buffer.type),
 			file_name = name + '.' + ext,
 			abs_file_name = abs_dir + name + '.' + ext
 		
 		var image
-		var wh, w, h
-		
+
 		function get_mw_mh(w, h, params) {
 			params = params || {}
 			var max_width = params.max_width,
@@ -118,9 +119,10 @@ var methods = {
 						image: image,
 						w: image.width(),
 						h: image.height(),
-						url: dir + file_name,
+						url: path + file_name,
 						file_name: file_name,
-						abs_file_path: abs_dir
+						abs_file_dir: abs_dir,
+						abs_file_name: abs_dir + file_name
 					})
 				}
 				

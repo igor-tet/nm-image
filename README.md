@@ -11,7 +11,8 @@ app.post('/api/upload', function (req, res) {
 	var params = req.body
 
 	image_lib.save({
-		dir: __dirname + '/uploads/1/' + params.dir_name,
+		dir: __dirname, //root directory
+		path: '/uploads/1/' + params.dir_name, //path next after root. Need to do url in response
 		name: 'test',
 		base64: params.base64,
 		max_width: 225,
