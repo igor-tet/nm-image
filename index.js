@@ -72,6 +72,7 @@ var methods = {
 		async.series({
 				mkdirp: function (cb) {
 					mkdirp(abs_dir, cb)
+
 				},
 				fs_writefile: function (cb) {
 					fs.writeFile(abs_file_name, buffer.data, cb)
@@ -85,18 +86,16 @@ var methods = {
 							, crop_k_h = crop.y || crop.h || 1
 							, _w = image.width() / crop_k_w
 							, _h = image.height() / crop_k_h
-						
+
 						var _min_wh = Math.min(_w, _h)
-						
+
 						var _w_new = Math.round(_min_wh * crop_k_w)
 						var _h_new = Math.round(_min_wh * crop_k_h)
-						
-						
+
+
 						var wh = get_mw_mh(_w_new, _h_new, params)
-						console.log('aasdfasdfasdf step2', wh)
 						image.crop(wh.new_w, wh.new_h, _cb_handler(cb))
 					} else {
-						console.log("NO NEED TO CROP")
 						cb()
 					}
 				},
@@ -104,13 +103,10 @@ var methods = {
 					var w = image.width()
 						, h = image.height()
 						, wh = get_mw_mh(w, h, params);
-					
-					console.log('whwhwhwhwh', wh, '\n\n', w, h)
+
 					if ((w == wh.new_w) && (h == wh.new_h)) {
-						console.log('NO NEED TO RESIZE')
 						cb()
 					} else {
-						console.log('NEED TO RESIZE')
 						image.resize(wh.new_w, wh.new_h, 'lanczos', _cb_handler(cb))
 					}
 				},
@@ -123,7 +119,8 @@ var methods = {
 						w: image.width(),
 						h: image.height(),
 						url: dir + file_name,
-						file_name: file_name
+						file_name: file_name,
+						abs_file_path: abs_dir
 					})
 				}
 				
