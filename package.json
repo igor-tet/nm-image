@@ -1,0 +1,38 @@
+{
+  "name": "nm-image",
+  "version": "1.0.2",
+  "description": "Scrap any pages easy",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/igor-tet/nm-image.git"
+  },
+  "keywords": [
+    "src",
+    "base64",
+    "decode",
+    "resize"
+  ],
+  "author": "Igor Teterevlev <igor.teterevlyov@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/igor-tet/nm-image/issues"
+  },
+  "homepage": "https://github.com/igor-tet/nm-image",
+  "devDependencies": {
+    "chai": "^3.5.0"
+  },
+  "dependencies": {
+    "async": "^1.5.2",
+    "cheerio": "^0.20.0",
+    "fs": "0.0.2",
+    "iconv-lite": "^0.4.13",
+    "lwip": "0.0.8",
+    "mkdirp": "^0.5.1",
+    "nm-m": "^1.0.7",
+    "request": "^2.72.0"
+  }
+}
